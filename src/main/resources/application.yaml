@@ -1,0 +1,49 @@
+server:
+  port: 8888
+#  shutdown: graceful
+
+spring.datasource:
+  username: 'user'
+  password: 'password'
+
+spring:
+  application.name: @project.artifactId@
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      indent-output: off
+  jpa:
+    open-in-view: false
+    hibernate.ddl-auto: create
+    show-sql: true
+    properties:
+      javax.persistence.query.timeout: 30
+      hibernate:
+        #default_schema: "${cardiff.datasource.default_schema:${spring.datasource.username}}"
+        jdbc.batch_size: 100
+        order_inserts: true
+        order_updates: true
+        # for now only inbox/search_table uses this strategy
+        #order_by.default_null_ordering: last
+  dao.exceptiontranslation.enabled: true
+  datasource:
+    name: cdf-hikari-pool
+    hikari:
+      #connection-init-sql: 'ALTER SESSION SET NLS_SORT=BINARY_AI'
+      maximum-pool-size: 3
+      #      connection-timeout: 10000
+      #      validation-timeout: 5000
+      #      auto-commit: off
+      #minimum-idle: 2
+      # to have connection in pool at most 10 minutes to be not closed by infrastructure or database itself
+      # (oracle does not have max. lifetime set in default)
+      max-lifetime: 600000
+    #url: jdbc:h2:[file:][<path>]<databaseName>
+    url: "jdbc:h2:mem:cardiff"
+logging.level:
+  ROOT: info
+
+# APPLICATION specific settings
+cardiff:
+  api.base-path: ""
+  #datasource.default_schema: 'CARDIFF'
