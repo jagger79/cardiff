@@ -1,18 +1,19 @@
-= Cardiff service
+# Cardiff service
 
 Service for customer's something...
 
-= Build prerequisities
+## Build prerequisities
 Java 17
 
-= Build info
+## Build info
 mvn clean package
 
-= Run info
+## Run info
 /usr/lib/jvm/java-17-openjdk-amd64/bin/java -jar target/cardiff-1.0.0-SNAPSHOT.jar
 
-= Environment info
+## Environment info
 server port: 8888
+
 endpoints:
  - localhost:8888/customers
  - localhost:8888/quotations
