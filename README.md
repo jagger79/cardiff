@@ -26,6 +26,7 @@ Implement:
 - micro-service will be able to run locally without any other external DB (etc.) dependencies
 - provide source code to us preferably with link publicly available on the internet or via ZIP file attached to the email
 
+### Quotation
 Create endpoint for creation of Quotation.
 Quotation has business attributes:
 - beginingOfInsurance
@@ -33,6 +34,7 @@ Quotation has business attributes:
 - dateOfSigningMortgage
 - Customer
 
+### Subscription
 Create endpoint for creation of Subscription.
 Create endpoint for retrieving single Subscription object.
 Subscription has business attributes:
@@ -40,19 +42,13 @@ Subscription has business attributes:
 - startDate
 - validUntil
 
-
+### Customer
 Create endpoint for updating Customer attributes.
 Endpoint for updating Customer should be able to update and/or remove existing values of any/all attributes.
 Customer has business attributes:
-
 - firstName
-
 - lastName
-
 - middleName
-
 - email
-
 - phoneNumber
-
 - birthDate
